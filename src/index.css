@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 20% 97%;
+    --foreground: 320 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 320 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 320 30% 10%;
+
+    --primary: 35 50% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 15% 94%;
+    --secondary-foreground: 320 30% 10%;
+
+    --muted: 30 15% 94%;
+    --muted-foreground: 280 15% 45%;
+
+    --accent: 30 15% 90%;
+    --accent-foreground: 320 30% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 20% 90%;
+    --input: 30 20% 97%;
+    --ring: 35 50% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 30 25% 98%;
+    --sidebar-foreground: 320 30% 10%;
+    --sidebar-primary: 35 50% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 15% 94%;
+    --sidebar-accent-foreground: 320 30% 10%;
+    --sidebar-border: 280 20% 90%;
+    --sidebar-ring: 35 50% 50%;
+
+    /* Custom tokens - Light theme */
+    --surface: 0 0% 100%;
+    --surface2: 30 15% 94%;
+    --surface3: 30 12% 90%;
+    --gold: 35 50% 50%;
+    --gold-light: 35 55% 62%;
+    --rose: 350 55% 57%;
+    --teal: 183 50% 40%;
+    --purple: 270 40% 55%;
+    --green: 150 50% 40%;
+    --text2: 280 20% 35%;
+    --text3: 280 15% 60%;
+    --shadow: 280 30% 50%;
+
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .glass-blur {
+    @apply backdrop-blur-xl bg-white/90;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:border-primary/40 hover:shadow-lg;
+    box-shadow: 0 2px 12px hsl(var(--shadow) / 0.08);
+  }
+
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(35 50% 50%), hsl(35 55% 62%));
+  }
+
+  .gold-text {
+    @apply text-primary;
+  }
+
+  .badge-vip {
+    background-color: hsl(var(--gold) / 0.12);
+    color: hsl(var(--gold));
+    border: 1px solid hsl(var(--gold) / 0.2);
+  }
+
+  .badge-active {
+    background-color: hsl(var(--green) / 0.12);
+    color: hsl(var(--green));
+    border: 1px solid hsl(var(--green) / 0.2);
+  }
+
+  .badge-inactive {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+
+  .badge-risk {
+    background-color: hsl(var(--rose) / 0.12);
+    color: hsl(var(--rose));
+    border: 1px solid hsl(var(--rose) / 0.2);
+  }
+
+  .badge-admin {
+    background-color: hsl(var(--gold) / 0.12);
+    color: hsl(var(--gold));
+    border: 1px solid hsl(var(--gold) / 0.2);
+  }
+
+  .badge-financeiro {
+    background-color: hsl(var(--green) / 0.12);
+    color: hsl(var(--green));
+    border: 1px solid hsl(var(--green) / 0.2);
+  }
+
+  .badge-colaborador {
+    background-color: hsl(var(--purple) / 0.12);
+    color: hsl(var(--purple));
+    border: 1px solid hsl(var(--purple) / 0.2);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
